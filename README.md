@@ -1,86 +1,83 @@
-[README.md](https://github.com/user-attachments/files/27188174/README.md)
-# VOID-RUNNER# VOID RUNNER
+# VOID RUNNER
 
-**VOID RUNNER** is a minimalist 2D arcade survival game for desktop.  
-The player controls a small glowing white dot and avoids falling red blocks in a dark neon environment. The goal is simple: survive as long as possible and beat the high score.
+**VOID RUNNER** is a minimalist 2D arcade survival game built with Python and Pygame.
+
+Control a glowing white runner, dodge falling red obstacles, collect blue gems, and survive as long as possible. The game uses a dark neon visual style with smooth trails, glowing particles, animated obstacles, gem collection, difficulty modes, score tracking, and a complete desktop game flow.
 
 ---
 
+## Preview
 
+### Home Screen
 
-## Game Concept
+![Home Screen](Pics/Home.png)
 
-VOID RUNNER is built around one simple mechanic:
+### Gameplay
 
-> Move the white dot. Avoid the red blocks. Survive as long as possible.
+![Gameplay](Pics/Game%20play.png)
 
-The game uses a clean minimalist visual style with:
-- Dark background
-- White glowing player
-- Red neon obstacles
-- Simple geometric UI
-- Score and high score system
-- Desktop `.exe` support
+### How To Play
+
+![How To Play](Pics/how%20to%20play.png)
+
+### Game Over
+
+![Game Over](Pics/game%20over.png)
+
+---
+
+## About the Game
+
+VOID RUNNER is designed to be simple, fast, and visually polished.
+
+The main goal is:
+
+> Avoid the red blocks. Collect blue gems. Beat your best score.
+
+The game is intentionally minimalist, using simple shapes and clean UI instead of complex assets. Even though the mechanics are simple, the glowing effects, trails, score system, and screen flow make it feel like a complete desktop game.
 
 ---
 
 ## Features
 
-- Minimalist home menu
-- Smooth player movement
-- Falling obstacle system
-- Collision detection
-- Score system
-- High score saving
-- Game over screen
-- Retry / Home / Exit actions
+- Minimalist dark neon UI
+- Home screen
+- Main gameplay screen
 - How To Play screen
-- Pause support
-- Windows executable build support
+- Settings screen
+- Pause screen
+- Game Over screen
+- Smooth player movement
+- White glowing player trail
+- Falling red obstacles with motion trails
+- Falling blue gems with sparkle effect
+- Gem collection score system
+- Easy / Medium / Hard difficulty modes
+- Best score saving
+- Retry, Home, and Exit controls
+- Windows `.exe` build support
 
 ---
 
-## Screens
+## Gameplay
 
-### Home Screen
+The player controls a small glowing white ball.
 
-The home screen contains the main navigation:
+Red blocks fall from the top of the screen. If the player touches a red block, the game ends.
 
-- `PLAY`
-- `HOW TO PLAY`
-- `SETTINGS`
-- `EXIT`
+Blue gems also fall from the top. Collecting gems increases the score.
 
-### Gameplay Screen
+The longer the player survives, the harder the game becomes.
 
-The gameplay screen includes:
+---
 
-- Player dot
-- Falling red blocks
-- Current score
-- Best score
-- Pause button
+## Difficulty Modes
 
-### How To Play Screen
-
-Shows the basic controls and rules:
-
-1. Move with `WASD` or arrow keys
-2. Avoid falling red blocks
-3. Survive as long as possible
-4. Beat your high score
-
-### Game Over Screen
-
-Displayed when the player hits an obstacle.
-
-Includes:
-
-- Final score
-- Best score
-- Retry button
-- Home button
-- Exit button
+| Mode | Description |
+|---|---|
+| Easy | Fewer obstacles, slower speed, safer gameplay |
+| Medium | Balanced default gameplay |
+| Hard | More obstacles, faster movement, higher gem value |
 
 ---
 
@@ -93,219 +90,45 @@ Includes:
 | `A` / `Arrow Left` | Move left |
 | `D` / `Arrow Right` | Move right |
 | `ESC` | Pause / Back |
+| `P` | Pause |
 | Mouse Click | Select menu buttons |
 
 ---
 
 ## Tech Stack
 
-- **Python**
-- **Pygame**
-- **PyInstaller**
+- Python
+- Pygame
+- PyInstaller
 
 ---
 
 ## Project Structure
 
 ```text
-void-runner/
+VOID-RUNNER/
 │
 ├── main.py
 ├── README.md
 ├── requirements.txt
+├── .gitignore
 │
-├── assets/
-│   ├── fonts/
-│   ├── sounds/
-│   ├── images/
-│   └── screenshots/
-│       ├── home.png
-│       ├── gameplay.png
-│       ├── how-to-play.png
-│       └── game-over.png
+├── Pics/
+│   ├── Home.png
+│   ├── Game play.png
+│   ├── how to play.png
+│   └── game over.png
 │
-├── data/
-│   └── highscore.txt
+├── src/
+│   ├── __init__.py
+│   ├── game.py
+│   ├── gem.py
+│   ├── obstacle.py
+│   ├── player.py
+│   ├── screens.py
+│   ├── settings.py
+│   ├── storage.py
+│   └── ui.py
 │
-└── src/
-    ├── settings.py
-    ├── game.py
-    ├── player.py
-    ├── obstacle.py
-    ├── ui.py
-    ├── screens.py
-    └── storage.py
-```
-
----
-
-## Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/void-runner.git
-cd void-runner
-```
-
-### 2. Create virtual environment
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate virtual environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-#### macOS / Linux
-
-```bash
-source venv/bin/activate
-```
-
-### 4. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Run the Game
-
-```bash
-python main.py
-```
-
----
-
-## Build Windows EXE
-
-Install PyInstaller:
-
-```bash
-pip install pyinstaller
-```
-
-Build the game:
-
-```bash
-pyinstaller --onefile --windowed --name VoidRunner main.py
-```
-
-The executable file will be generated here:
-
-```text
-dist/VoidRunner.exe
-```
-
----
-
-## Requirements
-
-`requirements.txt`
-
-```text
-pygame
-pyinstaller
-```
-
----
-
-## Gameplay Rules
-
-- The player starts near the bottom of the screen.
-- Red blocks fall from the top.
-- The player must avoid all red blocks.
-- Score increases over time.
-- The longer the player survives, the harder the game becomes.
-- If the player touches a red block, the game ends.
-- The best score is saved locally.
-
----
-
-## Team Roles
-
-This project was designed to be developed by two people.
-
-### Gameplay Developer
-
-Responsible for:
-
-- Player movement
-- Obstacle movement
-- Collision detection
-- Score system
-- Difficulty scaling
-- High score save/load
-- Game loop logic
-
-### UI / UX Developer
-
-Responsible for:
-
-- Home screen
-- Buttons
-- HUD
-- How To Play screen
-- Game Over screen
-- Pause screen
-- Visual polish
-- Sound/UI feedback
-
----
-
-## Development Checklist
-
-- [ ] Create Pygame window
-- [ ] Add game state system
-- [ ] Add home screen
-- [ ] Add player movement
-- [ ] Add falling obstacles
-- [ ] Add collision detection
-- [ ] Add score system
-- [ ] Add high score saving
-- [ ] Add game over screen
-- [ ] Add retry system
-- [ ] Add how to play screen
-- [ ] Add pause screen
-- [ ] Add settings screen
-- [ ] Add sound effects
-- [ ] Polish UI
-- [ ] Test gameplay
-- [ ] Build `.exe`
-
----
-
-## Final Version Goals
-
-The final version should include:
-
-- Complete menu flow
-- Playable main game
-- High score persistence
-- Clean visual design
-- Smooth controls
-- Working retry system
-- Windows executable file
-- README documentation
-- Screenshots for presentation
-
----
-
-## License
-
-This project is for learning and portfolio/demo purposes.  
-You can update the license depending on your repository usage.
-
----
-
-## Project Summary
-
-VOID RUNNER is a simple but polished minimalist arcade game.  
-It focuses on fast reflexes, clean UI, and a complete desktop game experience using only basic 2D shapes and lightweight game logic.
+└── data/
+    └── highscore.txt
