@@ -6,19 +6,7 @@ The player controls a small glowing white dot and avoids falling red blocks in a
 
 ---
 
-## Preview
 
-> Add your screenshots inside `assets/screenshots/` and update these paths if needed.
-
-| Home Screen | Gameplay |
-|---|---|
-| ![Home Screen](assets/screenshots/home.png) | ![Gameplay](assets/screenshots/gameplay.png) |
-
-| How To Play | Game Over |
-|---|---|
-| ![How To Play](assets/screenshots/how-to-play.png) | ![Game Over](assets/screenshots/game-over.png) |
-
----
 
 ## Game Concept
 
